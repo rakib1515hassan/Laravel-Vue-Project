@@ -3,7 +3,7 @@
 ## Project Setup
 
 ### Create a New Project
-```bash
+
 
 # To create Project
     >> composer create-project --prefer-dist laravel/laravel <your_project_name>
@@ -100,4 +100,3 @@
 - **Sections and Subsections**: Organized into clear sections for easy navigation.
 - **Examples**: Provided examples where applicable to demonstrate usage.
 
-Feel free to save this content into a file named `laravelNote.md` and use it as your reference guide for Laravel commands and operations.
