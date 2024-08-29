@@ -14,6 +14,14 @@ return new class extends Migration
         Schema::create('institutions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('address');
+            $table->date('start');
+            $table->date('end')->nullable();
+            $table->string('roll');
+            $table->boolean('running')->default(false);
         });
     }
 
