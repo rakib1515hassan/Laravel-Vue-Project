@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->date('birth_date')->nullable();
             $table->integer('age')->nullable();
+            $table->string('image')->nullable();
         });
     }
 
