@@ -1,66 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Project Management Guide
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Project Setup
 
-## About Laravel
+### Create a New Project
+```bash
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# To create Project
+    >> composer create-project --prefer-dist laravel/laravel <your_project_name>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    >> php artisan key:generate
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    >> php artisan serve
 
-## Learning Laravel
+    >>  php artisan serve --host=0.0.0.0 --port=<Port No>
+    EX: php artisan serve --host=0.0.0.0 --port=8001
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+# Srorage Link
+    >> php artisan storage:link
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+# Create Migrations Table
+    >> php artisan make:migration create_<table_name>_table
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    >> php artisan migrate
 
-### Premium Partners
+    >>  php artisan migrate --path=<Path>/<Migration Name>
+    EX: php artisan migrate --path=database/migrations/2024_04_17_123039_create_memberships_table.php
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+# Roll Back Migration
+    >>  php artisan migrate:rollback 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    >>  php artisan migrate:rollback --path=<Path>/<Migration Name>
+    EX: php artisan migrate:rollback --path=database/migrations/2024_04_17_123039_create_memberships_table.php
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Create Model
+    >> php artisan make:model <Model Name>
+    EX: php artisan make:model Institutions
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Create Controller
+    >>  php artisan make:controller <Controller Name> 
+    EX: php artisan make:controller UserController 
 
-## License
+    >>  php artisan make:controller <Controller Name> --resource
+    EX: php artisan make:controller UserController --resource
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    >> php artisan make:controller <Path Name>/<Controller Name> --resource
+    EX: php artisan make:controller api/PhotoCoUserControllerntroller --resource
+
+
+
+# Create Seeder
+    >> php artisan make:seeder <Seeder Name>
+
+    >> php artisan db:seed
+
+
+
+# Create Model, Migration, Seeder and Controller 
+    >> php artisan make:model <Model Name> -msc
+    >> php artisan make:model <Model Name> -m  (Model and Migrate)
+
+
+# Optimize the Application
+    >> php artisan optimize
+
+
+# Clear Application Cache
+    >> php artisan cache:clear
+
+
+# Clear View Cache
+    >> php artisan view:clear
+
+
+# Clear Config Cache
+    >> php artisan config:cache
+
+
+# Clear Route Cache
+    >> php artisan route:cache
+
+
+# List All Artisan Commands
+    >> php artisan list
+
+
+# Clear Config Cache
+    >> php artisan config:cache
+
+
+
+
+### Key Points:
+- **Markdown Formatting**: Used proper Markdown syntax to enhance readability.
+- **Sections and Subsections**: Organized into clear sections for easy navigation.
+- **Examples**: Provided examples where applicable to demonstrate usage.
+
+Feel free to save this content into a file named `laravelNote.md` and use it as your reference guide for Laravel commands and operations.
