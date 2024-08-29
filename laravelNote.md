@@ -1,4 +1,4 @@
-## To create Project
+# To create Project
 
     >> composer create-project --prefer-dist laravel/laravel <your_project_name>
 
@@ -7,6 +7,6 @@
     >> php artisan serve
 
 
-## Create Migrations Table
+# Create Migrations Table
 
     >> php artisan make:migration create_<table_name>_table
