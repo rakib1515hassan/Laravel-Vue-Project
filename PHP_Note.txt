@@ -62,6 +62,10 @@ php artisan make:seeder
 
 
 
++++++++++ Route Cash Clear +++++++++
+php artisan route:clear
+php artisan route:list
+
 
 utf8mb4_0900_ai_ci
 utf8mb4_general_ci
